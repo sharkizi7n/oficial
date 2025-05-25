@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Surpresa para Meu Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+/* Corações flutuando */
+.heart-float {
+    position: fixed;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp 10s linear infinite;
+    opacity: 0.7;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.7; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Borboleta animada */
+@keyframes fly {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+.butterfly {
+    position: fixed;
+    width: 60px;
+    top: 20%;
+    left: 10%;
+    animation: fly 4s infinite ease-in-out;
+    z-index: 1000;
+}
+
+/* Flores animadas */
+.flower {
+    position: fixed;
+    bottom: -100px;
+    width: 50px;
+    animation: rise 10s infinite ease-in;
+}
+.flower:nth-child(1) { left: 10%; animation-delay: 0s; }
+.flower:nth-child(2) { left: 40%; animation-delay: 2s; }
+.flower:nth-child(3) { left: 70%; animation-delay: 4s; }
+
+@keyframes rise {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Botão flutuante */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
+    background-color: #e6f7ff;
+    background-repeat: repeat;
+}
+body { font-family: 'Great Vibes', cursive; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e6f7ff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .countdown {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .photo-frame {
+            display: inline-block;
+            border: 5px solid #007BFF;
+            border-radius: 15px;
+            margin: 20px;
+            padding: 10px;
+            background-color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05);
+        }
+
+        .photo {
+            max-width: 300px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .poem {
+            font-style: italic;
+            margin-top: 10px;
+            color: #333;
+            display: none;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #007BFF;
+        }
+
+        .heart-explosion {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Corações voando -->
+<span class="heart-float" style="left: 10%;">❤️</span>
+<span class="heart-float" style="left: 30%; animation-delay: 2s;">💖</span>
+<span class="heart-float" style="left: 50%; animation-delay: 4s;">💕</span>
+<span class="heart-float" style="left: 70%; animation-delay: 6s;">💘</span>
+<span class="heart-float" style="left: 90%; animation-delay: 8s;">💗</span>
+
+
+<!-- Borboleta -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Heart_corazón.svg/512px-Heart_corazón.svg.png" class="butterfly">
+
+
+
+
+<div style="background-color: #e0f0ff; padding: 10px; border-radius: 12px; margin-bottom: 20px;">
+    <h3 style="margin: 0; color: #0056b3;">🎶 Tocando: Aliança 🎶</h3>
+    <audio autoplay loop style="margin-top: 5px; width: 100%;">
+      <source src="alianca.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML5.
+    </audio>
+</div>
+
+
+<h1>Surpresa para o Amor da Minha Vida</h1>
+
+
+<div class="countdown" id="countdown" style="border: 3px dashed #007BFF; border-radius: 15px; padding: 15px; background-color: #f0faff; max-width: 400px; margin: auto; font-size: 22px; color: #0056b3; box-shadow: 0 0 10px #007BFF;">
+</div>
+
+
+<div class="photo-frame">
+    <button onclick="revealPhoto(1)">Revelar Foto 1</button><br>
+    <img id="photo1" class="photo" src="foto1.jpg.jpeg">
+    <p id="poem1" class="poem">Teu sorriso é luz que me guia,<br>Teu olhar a paz que almejei,<br>Em teus braços encontrei poesia,<br>Meu amor, contigo sonhei.</p>
+</div>
+
+<div class="photo-frame">
+    <button onclick="revealPhoto(2)">Revelar Foto 2</button><br>
+    <img id="photo2" class="photo" src="foto2.jpg.jpeg">
+    <p id="poem2" class="poem">És a estrela que brilha no escuro,<br>A calmaria em meu mar de emoção,<br>Nosso amor é puro e seguro,<br>Bate forte em meu coração.</p>
+</div>
+
+<div class="photo-frame">
+    <button onclick="revealPhoto(3)">Revelar Foto 3</button><br>
+    <img id="photo3" class="photo" src="foto3.jpg.jpeg">
+    <p id="poem3" class="poem">Cada momento ao teu lado é encanto,<br>Um presente que o destino me deu,<br>És o verso mais lindo do meu canto,<br>Meu mundo é melhor sendo teu.</p>
+</div>
+
+<div class="photo-frame">
+    <button onclick="revealPhoto(4)">Revelar Foto 4</button><br>
+    <img id="photo4" class="photo" src="foto4.jpg.jpeg">
+    <p id="poem4" class="poem">Confia em mim, meu amor eterno,<br>Juntos venceremos qualquer dor,<br>Nosso laço é forte, puro e terno,<br>Para sempre, seremos amor.</p>
+</div>
+
+
+<div style="margin-top: 40px;">
+    <button onclick="explodeHearts()" style="font-size: 24px; padding: 15px 30px;">💖 Te Amo 💖</button>
+</div>
+
+<p style="margin-top: 40px; font-size: 18px;">
+    Fiz isso com muito carinho e amor, foram dias acordado até tarde, até conseguir fazer isso. Eu queria dizer que te amo, você é o amor da minha vida, não existe um mundo onde eu vou deixar você partir, o que foi feito pra ficar junto nunca se separa, eu errei feio, mas tô aqui pra mudar tudo, tô aqui pra te dizer que te amo, que você é perfeita, que você é maravilhosa, que seu sorriso é sinônimo de perfeição. Seu corpo é gostoso, sem nenhum defeito. E te peço pra confiar em mim, que eu confiarei em você, e assim iremos passar por tudo isso.
+</p>
+
+
+
+<br><br>
+<a href="coracao.html" style="font-size: 18px; padding: 12px 24px; background-color: #007BFF; color: white; border-radius: 8px; text-decoration: none;"><button>Ver Coração Batendo</button></a>
+
+<canvas id="heartCanvas" class="heart-explosion"></canvas>
+
+<script>
+    const startDate = new Date("2023-10-01T00:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = now - startDate;
+
+        const years = Math.floor(distance / (1000 * 60 * 60 * 24 * 365));
+        const months = Math.floor((distance % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+        const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = 
+            `${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function revealPhoto(index) {
+        document.getElementById("photo" + index).style.display = "block";
+        document.getElementById("poem" + index).style.display = "block";
+    }
+
+    function explodeHearts() {
+        alert("💖💖💖 TE AMO! 💖💖💖");
+    }
+</script>
+
+
+<div style="text-align:center; margin-top: 50px;">
+    <button onclick="mostrarAmor()" style="padding: 15px 30px; font-size: 18px; background-color: #0056b3; color: white; border: none; border-radius: 10px; cursor: pointer;">
+        ❤️ Clique aqui ❤️
+    </button>
+    <div id="amor100" style="display:none; font-family:'Dancing Script', cursive; margin-top: 20px; font-size: 20px; max-width: 800px; margin-left: auto; margin-right: auto; background-color: #e6f7ff; padding: 20px; border-radius: 10px;" style="display:none; margin-top: 20px; font-size: 16px; max-width: 800px; margin-left: auto; margin-right: auto; background-color: #e6f7ff; padding: 20px; border-radius: 10px;">
+        <p><strong>Eu te amo em 100 idiomas:</strong></p>
+        <p>
+            Te amo (Português), I love you (Inglês), Je t’aime (Francês), Ich liebe dich (Alemão), Ti amo (Italiano), Te quiero (Espanhol),
+            Я тебя люблю (Russo), 愛してる (Japonês), 사랑해 (Coreano), 我爱你 (Chinês), Ik hou van jou (Holandês),
+            Eu te iubesc (Romeno), Jag älskar dig (Sueco), Jeg elsker deg (Norueguês), Kocham cię (Polonês),
+            Te iubesc (Romeno), Volim te (Croata), Seni seviyorum (Turco), Σ' αγαπώ (Grego), Mahal kita (Filipino),
+            Ani ohev otach (Hebraico), Aloha wau ia 'oe (Havaiano), Hum tumhe pyar karte hain (Hindi),
+            Mina rakastan sinua (Finlandês), Tôi yêu bạn (Vietnamita), T’estimo (Catalão), Ég elska þig (Islandês),
+            Taim i’ ngra leat (Irlandês), Lubim ta (Eslovaco), Miluji tě (Tcheco), Ich lieb di (Suíço-Alemão),
+            Me do wo (Akan), Szeretlek (Húngaro), Te dua (Albanês), Ich han di gärn (Suíço), Ngiyakuthanda (Zulu),
+            Wo ai ni (Mandarim), Ana behibek (Árabe), Mo ni fe re (Iorubá), Inhobok (Maltês), Ek het jou lief (Africâner),
+            Te amo (Latim), Saranghae (Hangul), Main tumse pyaar karta hoon (Urdu), T'estimo molt (Catalão), Ke a go rata (Tswana),
+            Amo-te (Galego), Mi amas vin (Esperanto), Ai shiteru (Japonês formal), Nakupenda (Suaíli), Ich liebe dich sehr (Alemão formal),
+            Amo-te muito (Português de Portugal), Jeg elsker dig så højt (Dinamarquês), Te quiero mucho (Espanhol informal), ...
+        </p>
+    </div>
+</div>
+<script>
+    function mostrarAmor() {
+        var div = document.getElementById("amor100");
+        div.style.display = div.style.display === "none" ? "block" : "none";
+    }
+</script>
+
+</body>
+</html><body>
+
+<!-- Corações voando -->
+<span class="heart-float" style="left: 10%;">❤️</span>
+<span class="heart-float" style="left: 30%; animation-delay: 2s;">💖</span>
+<span class="heart-float" style="left: 50%; animation-delay: 4s;">💕</span>
+<span class="heart-float" style="left: 70%; animation-delay: 6s;">💘</span>
+<span class="heart-float" style="left: 90%; animation-delay: 8s;">💗</span>
+
+
+<!-- Borboleta -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Heart_corazón.svg/512px-Heart_corazón.svg.png" class="butterfly">
+
+
+
+
+<div style="background-color: #e0f0ff; padding: 10px; border-radius: 12px; margin-bottom: 20px;">
+    <h3 style="margin: 0; color: #0056b3;">🎶 Tocando: Aliança 🎶</h3>
+    <audio id="bgMusic" autoplay loop style="margin-top: 5px; width: 100%;">
+        <source src="alianca.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio HTML5.
+    </audio>
+    
+<div style="margin-top: 10px;">
+    <button onclick="document.getElementById('bgMusic').play()" style="font-size: 16px; padding: 10px 20px;">
+        ▶️ Tocar Música
+    </button>
+</div>
+
+</div>
+l>
+<html lang="pt-BR">
+<head>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Surpresa para Meu Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+/* Corações flutuando */
+.heart-float {
+    position: fixed;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp 10s linear infinite;
+    opacity: 0.7;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.7; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Borboleta animada */
+@keyframes fly {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+.butterfly {
+    position: fixed;
+    width: 60px;
+    top: 20%;
+    left: 10%;
+    animation: fly 4s infinite ease-in-out;
+    z-index: 1000;
+}
+
+/* Flores animadas */
+.flower {
+    position: fixed;
+    bottom: -100px;
+    width: 50px;
+    animation: rise 10s infinite ease-in;
+}
+.flower:nth-child(1) { left: 10%; animation-delay: 0s; }
+.flower:nth-child(2) { left: 40%; animation-delay: 2s; }
+.flower:nth-child(3) { left: 70%; animation-delay: 4s; }
+
+@keyframes rise {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Botão flutuante */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
+    background-color: #e6f7ff;
+    background-repeat: repeat;
+}
+body { font-family: 'Great Vibes', cursive; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e6f7ff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .countdown {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .photo-frame {
+            display: inline-block;
+            border: 5px solid #007BFF;
+            border-radius: 15px;
+            margin: 20px;
+            padding: 10px;
+            background-color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05);
+        }
+
+        .photo {
+            max-width: 300px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .poem {
+            font-style: italic;
+            margin-top: 10px;
+            color: #333;
+            display: none;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #007BFF;
+        }
+
+        .heart-explosion {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Corações voando -->
+<span class="heart-float" style="left: 10%;">❤️</span>
+<span class="heart-float" style="left: 30%; animation-delay: 2s;">💖</span>
+<span class="heart-float" style="left: 50%; animation-delay: 4s;">💕</span>
+<span class="heart-float" style="left: 70%; animation-delay: 6s;">💘</span>
+<span class="heart-float" style="left: 90%; animation-delay: 8s;">💗</span>
+
+
+<!-- Borboleta -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Heart_corazón.svg/512px-Heart_corazón.svg.png" class="butterfly">
+
+
+
+
+<div style="background-color: #e0f0ff; padding: 10px; border-radius: 12px; margin-bottom: 20px;">
+    <h3 style="margin: 0; color: #0056b3;">🎶 Tocando: Aliança 🎶</h3>
+    <audio autoplay loop style="margin-top: 5px; width: 100%;">
+      <source src="alianca.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML5.
+    </audio>
+</div>
+
+
+</script>
+
+</body>
+</html>

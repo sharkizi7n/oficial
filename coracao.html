@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Coração Batendo</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffe4ec, #fff0f5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .heart {
+            width: 100px;
+            height: 90px;
+            position: relative;
+            background: red;
+            transform: rotate(-45deg);
+            animation: beat 1s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 100px;
+            height: 90px;
+            position: absolute;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+        }
+
+        h1 {
+            color: #d81b60;
+            margin-top: 40px;
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <h1>Meu coração bate por você 💓</h1>
+</body>
+</html>
