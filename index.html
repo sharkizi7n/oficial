@@ -280,10 +280,31 @@ body { font-family: 'Great Vibes', cursive; }
         div.style.display = div.style.display === "none" ? "block" : "none";
     }
 </script>
-<div style="margin-top: 50px;">
-    <h2 style="color: #d81b60; font-family: 'Great Vibes', cursive;">✨ Uma princesa que encanta como você ✨</h2>
-    <img src="tiana.gif" alt="Tiana animada" style="width: 250px; animation: flutuar 3s ease-in-out infinite;">
+<div style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
+  <h2 style="color: #d81b60; font-family: 'Great Vibes', cursive;">✨ Uma princesa que encanta como você ✨</h2>
+  <div style="
+      padding: 20px;
+      border: 5px dashed #d81b60;
+      border-radius: 20px;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4ec);
+      box-shadow: 0 0 20px rgba(216, 27, 96, 0.4);
+      display: inline-block;
+    ">
+    <img src="tiana.gif" alt="Tiana animada" style="
+        width: 250px;
+        border-radius: 15px;
+        animation: flutuar 3s ease-in-out infinite;
+      ">
+  </div>
 </div>
+
+<style>
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+</style>
+
 </body>
 </html><body>
 
